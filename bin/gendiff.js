@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
-import gendiff from '../src/index';
+import genDiff from '../src/index.js';
 
 const program = new Command();
 program
@@ -9,5 +9,5 @@ program
   .option('-f, --format <type>', 'output format(choices: stylish, plain, json)', 'stylish')
   .helpOption('-h, --help', 'output usage information')
   .arguments('<filepath1> <filepath2>')
-  .action((file1, file2) => gendiff(file1, file2));
+  .action((file1, file2) => console.log(genDiff(file1, file2)));
 program.parse();
