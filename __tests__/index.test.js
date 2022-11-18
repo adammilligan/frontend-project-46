@@ -12,11 +12,11 @@ const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf8')
 
 const filepath1 = getFixturePath('file1.json');
 const filepath2 = getFixturePath('file2.json');
-const expected = readFile('resulttest.txt');
+const expected = readFile('resultTest.txt');
 
 test('first test', () => {
   expect(genDiff(filepath1, filepath2)).toEqual(expected);
 });
-
-// console.log(genDiff(filepath1, filepath2));
+//
 // console.log(expected);
+// console.log(genDiff(filepath1, filepath2));

@@ -14,7 +14,7 @@ test:
 	NODE_OPTIONS=--experimental-vm-modules npx jest
 
 test-watch:
-	npx jest --watch
+	NODE_OPTIONS=--experimental-vm-modules npx jest --watch
 
 test-coverage:
-	npx jest --bail --coverage --coverageProvider=v8
+	NODE_OPTIONS=--experimental-vm-modules npx jest --bail --coverage --coverageProvider=v8
