@@ -2,6 +2,7 @@ import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';
 import fs from 'fs';
 import genDiff from '../src/index.js';
+import parse from '../src/parse.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -33,6 +34,12 @@ const expected = readFile('resultTest.txt');
 test('first test', () => {
   expect(genDiff(beforeFlatJson, afterFlatJson)).toEqual(expected);
   expect(genDiff(beforeFlatYaml, afterFlatYaml)).toEqual(expected);
+});
+
+test('type file', () => {
+  const parseFunctionWrapper = () => parse('test', 'test');
+  expect(parseFunctionWrapper).toThrow(Error);
+  expect(parseFunctionWrapper).toThrow('unknown file extension test');
 });
 
 //
