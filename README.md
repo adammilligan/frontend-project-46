@@ -9,7 +9,7 @@ Compares two configuration files and shows a difference.
 <a href="https://codeclimate.com/github/adammilligan/frontend-project-46/test_coverage"><img src="https://api.codeclimate.com/v1/badges/d84e368f05a25df339b8/test_coverage" /></a>
 ----
 
-##Minimum requirements
+## Minimum requirements
 
 node.js v16.17.0, terminal(command line), linux or macos.
 
