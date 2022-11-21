@@ -13,6 +13,14 @@ Compares two configuration files and shows a difference.
 
 node.js v16.17.0, terminal(command line), linux or macos.
 
+## Setup
+
+```sh
+$ make install
+$ make publish
+sudo npm link
+```
+
 ## Comparing simple files
 
 JSON
