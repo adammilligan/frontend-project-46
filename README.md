@@ -8,5 +8,11 @@ Compares two configuration files and shows a difference.
 
 Minimum requirements: node.js v16.17.0, terminal(command line), linux or macos.
 
+**Comparing simple files**
+
+JSON
+gendiff ./__fixtures__/file1.json ./__fixtures__/file2.json
+
+[![asciicast](https://asciinema.org/a/7eX6ZGnTTZfN8Rro7O8v7cFJ4.svg)](https://asciinema.org/a/7eX6ZGnTTZfN8Rro7O8v7cFJ4)
 
 
