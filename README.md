@@ -36,3 +36,4 @@ YAML
 ```sh
 gendiff ./__fixtures__/before_flat.yml ./__fixtures__/after_flat.yml
 ```
+[![asciicast](https://asciinema.org/a/539187.svg)](https://asciinema.org/a/539187)
