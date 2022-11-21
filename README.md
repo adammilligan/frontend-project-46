@@ -16,8 +16,8 @@ node.js v16.17.0, terminal(command line), linux or macos.
 ## Setup
 
 ```sh
-$ make install
-$ make publish
+make install
+make publish
 sudo npm link
 ```
 
@@ -26,7 +26,7 @@ sudo npm link
 JSON
 
 ```sh
-gendiff ./__fixtures__/file1.json ./__fixtures__/file2.json
+gendiff ./__fixtures__/before_flat.json ./__fixtures__/after_flat.json
 ```
 
 [![asciicast](https://asciinema.org/a/7eX6ZGnTTZfN8Rro7O8v7cFJ4.svg)](https://asciinema.org/a/7eX6ZGnTTZfN8Rro7O8v7cFJ4)

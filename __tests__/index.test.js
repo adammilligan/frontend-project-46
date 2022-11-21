@@ -10,8 +10,8 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf8');
 
-const filepath1 = getFixturePath('file1.json');
-const filepath2 = getFixturePath('file2.json');
+const filepath1 = getFixturePath('before_flat.json');
+const filepath2 = getFixturePath('after_flat.json');
 const expected = readFile('resultTest.txt');
 
 test('first test', () => {
