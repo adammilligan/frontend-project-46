@@ -31,4 +31,8 @@ gendiff ./__fixtures__/before_flat.json ./__fixtures__/after_flat.json
 
 [![asciicast](https://asciinema.org/a/7eX6ZGnTTZfN8Rro7O8v7cFJ4.svg)](https://asciinema.org/a/7eX6ZGnTTZfN8Rro7O8v7cFJ4)
 
+YAML
 
+```sh
+gendiff ./__fixtures__/before_flat.yml ./__fixtures__/after_flat.yml
+```
