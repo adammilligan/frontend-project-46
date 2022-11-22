@@ -13,6 +13,9 @@ const makeNode = (data1, data2) => {
     if (data1[key] !== data2[key]) {
       return `  - ${key}: ${data1[key]}\n  + ${key}: ${data2[key]}`;
     }
+    if (_.isObject(data1[key]) && _.isObject(data2[key])) {
+      makeNode(data1[key], data2[key]);
+    }
     return `    ${key}: ${data2[key]}`;
   });
   return `{\n${result.join('\n')}\n}`;

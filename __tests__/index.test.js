@@ -29,7 +29,7 @@ const beforeFlatJson = getFixturePath('before_flat.json');
 const afterFlatJson = getFixturePath('after_flat.json');
 const beforeFlatYaml = getFixturePath('before_flat.yml');
 const afterFlatYaml = getFixturePath('after_flat.yml');
-const expected = readFile('resultTest.txt');
+const expected = readFile('resultFlatTest.txt');
 
 test('first test', () => {
   expect(genDiff(beforeFlatJson, afterFlatJson)).toEqual(expected);
