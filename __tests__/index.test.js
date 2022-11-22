@@ -30,5 +30,5 @@ test('throw new Error', () => {
   expect(parseFunctionWrapper).toThrow(Error);
   expect(parseFunctionWrapper).toThrow('unknown file extension test');
   expect(formattersFunctionWrapper).toThrow(Error);
-  expect(formattersFunctionWrapper).toThrow('output format test not found')
+  expect(formattersFunctionWrapper).toThrow('output format test not found');
 });
