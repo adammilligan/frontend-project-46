@@ -37,3 +37,11 @@ YAML
 gendiff ./__fixtures__/before_flat.yml ./__fixtures__/after_flat.yml
 ```
 [![asciicast](https://asciinema.org/a/539187.svg)](https://asciinema.org/a/539187)
+
+## Comparing complex files
+
+```sh
+gendiff ./__fixtures__/before.json ./__fixtures__/after.json
+```
+
+[![asciicast](https://asciinema.org/a/rTZSAH5Zusrh8WnCWuMIqGJCj.svg)](https://asciinema.org/a/rTZSAH5Zusrh8WnCWuMIqGJCj)
