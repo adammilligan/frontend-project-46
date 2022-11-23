@@ -46,7 +46,7 @@ gendiff ./__fixtures__/before.json ./__fixtures__/after.json
 
 [![asciicast](https://asciinema.org/a/rTZSAH5Zusrh8WnCWuMIqGJCj.svg)](https://asciinema.org/a/rTZSAH5Zusrh8WnCWuMIqGJCj)
 
-## Comparing complex files with plaai format
+## Comparing complex files with plain format
 
 ```sh
 gendiff --format plain ./__fixtures__/before.json ./__fixtures__/after.json
@@ -54,3 +54,12 @@ gendiff --format plain ./__fixtures__/before.yml ./__fixtures__/after.yml
 ```
 
 [![asciicast](https://asciinema.org/a/he6iDLyK1toXLZl4djTGD6LVG.svg)](https://asciinema.org/a/he6iDLyK1toXLZl4djTGD6LVG)
+
+## Comparing complex files with json format
+
+```sh
+gendiff --format json ./__fixtures__/before.json ./__fixtures__/after.json
+gendiff --format json ./__fixtures__/before.yml ./__fixtures__/after.yml
+```
+
+[![asciicast](https://asciinema.org/a/iavYCB2CiTPM015vaQKZBVxFd.svg)](https://asciinema.org/a/iavYCB2CiTPM015vaQKZBVxFd)
