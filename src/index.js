@@ -1,10 +1,9 @@
-import { readFileSync } from 'fs';
 import path from 'node:path';
 import makeNode from './makeNode.js';
 import parse from './parse.js';
 import formatData from './formatters/index.js';
+import getData from './getData.js';
 
-const getData = (pathFile) => readFileSync(pathFile, 'utf-8');
 export const getTypeFile = (pathFile) => path.extname(pathFile).slice(1);
 
 export default (file1, file2, format = 'stylish') => {
