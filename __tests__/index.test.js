@@ -22,6 +22,7 @@ describe('gendiff', () => {
     const pathToFile2 = getFixturePath(`after.${format}`);
     expect(genDiff(pathToFile1, pathToFile2)).toEqual(getResult('stylish'));
     expect(genDiff(pathToFile1, pathToFile2, 'plain')).toEqual(getResult('plain'));
+    expect(genDiff(pathToFile1, pathToFile2, 'json')).toEqual(getResult('json'));
   });
 });
 

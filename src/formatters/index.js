@@ -1,13 +1,13 @@
 import stylish from './stylish.js';
 import plain from './plain.js';
-// import jsonFormat from './jsonFormat.js';
+import jsonFormat from './json.js';
 
 export default (diff, formatName) => {
   switch (formatName) {
     case 'plain':
       return plain(diff);
-    // case 'json':
-    //   return jsonFormat(diff);
+    case 'json':
+      return jsonFormat(diff);
     case 'stylish':
       return stylish(diff);
     default:
