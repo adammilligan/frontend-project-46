@@ -45,3 +45,11 @@ gendiff ./__fixtures__/before.json ./__fixtures__/after.json
 ```
 
 [![asciicast](https://asciinema.org/a/rTZSAH5Zusrh8WnCWuMIqGJCj.svg)](https://asciinema.org/a/rTZSAH5Zusrh8WnCWuMIqGJCj)
+
+## Comparing complex files with plaai format
+
+```sh
+gendiff --format plain ./__fixtures__/before.json ./__fixtures__/after.json
+gendiff --format plain ./__fixtures__/before.yml ./__fixtures__/after.yml
+```
+
