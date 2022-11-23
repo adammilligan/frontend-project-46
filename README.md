@@ -53,3 +53,4 @@ gendiff --format plain ./__fixtures__/before.json ./__fixtures__/after.json
 gendiff --format plain ./__fixtures__/before.yml ./__fixtures__/after.yml
 ```
 
+[![asciicast](https://asciinema.org/a/he6iDLyK1toXLZl4djTGD6LVG.svg)](https://asciinema.org/a/he6iDLyK1toXLZl4djTGD6LVG)
