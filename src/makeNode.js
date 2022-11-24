@@ -4,6 +4,11 @@ const makeNode = (data1, data2) => {
   const keys = _.union(Object.keys(data1), Object.keys(data2));
 
   const result = keys.map((key) => {
+    if (_.isObject(data1[key]) && _.isObject(data2[key])) {
+      const children = makeNode(data1[key], data2[key]);
+
+      return { key, type: 'nested', children };
+    }
     if (_.isEqual(data1[key], data2[key])) {
       return { key, type: 'unchanged', value: data1[key] };
     }
@@ -15,13 +20,6 @@ const makeNode = (data1, data2) => {
     if (_.has(data1, key) && !_.has(data2, key)) {
       return { key, type: 'deleted', value: data1[key] };
     }
-
-    if (_.isObject(data1[key]) && _.isObject(data2[key])) {
-      const children = makeNode(data1[key], data2[key]);
-
-      return { key, type: 'nested', children };
-    }
-
     return {
       key, type: 'changed', valueBefore: data1[key], valueAfter: data2[key],
     };
