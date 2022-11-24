@@ -20,7 +20,7 @@ const stringify = (val, level) => {
   return result.join('\n');
 };
 
-const getStylish = (ast, depth) => {
+const getStylish = (node, depth) => {
   const getResult = (data, level) => {
     const result = data.map((el) => {
       const currentIndent = ' '.repeat((level) * indent + initial);
@@ -44,9 +44,9 @@ const getStylish = (ast, depth) => {
     return result;
   };
 
-  const tree = getResult(ast, depth);
+  const tree = getResult(node, depth);
 
   return `{\n${tree.join('\n')}\n${' '.repeat(depth * indent)}}`;
 };
 
-export default (ast) => getStylish(ast, 0);
+export default (node) => getStylish(node, 0);
