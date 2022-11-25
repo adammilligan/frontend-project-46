@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import _ from 'lodash/fp';
 
 const stringify = (val) => {
   if (_.isString(val)) {
@@ -41,7 +41,7 @@ const getPlain = (node, acc) => {
   };
 
   const tree = getResult(node);
-  return `${_.compact(tree).sort().join('\n')}`;
+  return `${_.sort(_.compact(tree)).join('\n')}`;
 };
 
 export default (node) => getPlain(node, '');
