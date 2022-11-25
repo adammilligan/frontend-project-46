@@ -1,4 +1,4 @@
-import _ from 'lodash/fp';
+import _ from 'lodash';
 
 const stringify = (val) => {
   if (_.isString(val)) {
