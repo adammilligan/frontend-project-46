@@ -3,6 +3,8 @@ import _ from 'lodash';
 const indent = 4;
 const initial = 2;
 
+const generateObjectString = (currentDepth, currentValue, conditionalIndent, el) => `\n${' '.repeat(currentDepth + initial)}  ${el}: ${currentValue}${conditionalIndent}`;
+
 const stringify = (val, level) => {
   if (!_.isObject(val) || _.isNull(val)) {
     return val;
@@ -16,7 +18,7 @@ const stringify = (val, level) => {
 
     const conditionalIndent = index + 1 === keys.length ? `\n${' '.repeat(currentDepth)}` : '';
 
-    return `\n${' '.repeat(currentDepth + initial)}  ${el}: ${currentValue}${conditionalIndent}`;
+    return generateObjectString(currentDepth, currentValue, conditionalIndent, el);
   });
 
   return `{${result.join('')}}`;
