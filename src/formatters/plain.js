@@ -4,7 +4,6 @@ const stringify = (val) => {
   if (_.isString(val)) {
     return `'${val}'`;
   }
-
   if (_.isObject(val)) {
     return '[complex value]';
   }
@@ -42,6 +41,8 @@ const getPlain = (node, acc) => {
   };
 
   const tree = getResult(node);
+
+  // eslint-disable-next-line fp/no-mutating-methods
   return `${_.compact(tree).sort().join('\n')}`;
 };
 

@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 const makeNode = (data1, data2) => {
-  const keys = _.union(Object.keys(data1), Object.keys(data2));
+  const keys = _.sortBy(_.union(Object.keys(data1), Object.keys(data2)));
 
   const result = keys.map((key) => {
     if (_.isObject(data1[key]) && _.isObject(data2[key])) {
@@ -25,7 +25,6 @@ const makeNode = (data1, data2) => {
       key, type: 'changed', valueBefore: data1[key], valueAfter: data2[key],
     };
   });
-
   return result;
 };
 
