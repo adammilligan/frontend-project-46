@@ -4,20 +4,22 @@ const indent = 4;
 const initial = 2;
 
 const stringify = (val, level) => {
-  if (!_.isObject(val)) {
+  if (!_.isObject(val) || _.isNull(val)) {
     return val;
   }
 
   const keys = Object.keys(val);
 
-  const result = keys.map((el) => {
+  const result = keys.map((el, index) => {
     const currentValue = `${stringify(val[el], level + 1)}`;
     const currentDepth = (level + 1) * indent;
 
-    return `{\n${' '.repeat(currentDepth + initial)}  ${el}: ${currentValue}\n${' '.repeat(currentDepth)}}`;
+    const conditionalIndent = index + 1 === keys.length ? `\n${' '.repeat(currentDepth)}` : '';
+
+    return `\n${' '.repeat(currentDepth + initial)}  ${el}: ${currentValue}${conditionalIndent}`;
   });
 
-  return result.join('\n');
+  return `{${result.join('')}}`;
 };
 
 const getStylish = (node, depth) => {
