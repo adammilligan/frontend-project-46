@@ -5,7 +5,7 @@ import parse from './parse.js';
 import formatData from './formatters/index.js';
 
 const getData = (fullPath) => fs.readFileSync(fullPath, 'utf-8');
-export const getTypeFile = (pathFile) => path.extname(pathFile).slice(1);
+const getTypeFile = (pathFile) => path.extname(pathFile).slice(1);
 
 export default (file1, file2, format = 'stylish') => {
   const file1Object = parse(getData(file1), getTypeFile(file1));
