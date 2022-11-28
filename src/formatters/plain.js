@@ -42,8 +42,7 @@ const getPlain = (node, acc) => {
 
   const tree = getResult(node);
 
-  // eslint-disable-next-line fp/no-mutating-methods
-  return `${_.compact(tree).sort().join('\n')}`;
+  return `${_.compact(tree).join('\n')}`;
 };
 
 export default (node) => getPlain(node, '');
