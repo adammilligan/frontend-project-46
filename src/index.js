@@ -1,6 +1,6 @@
 import path from 'node:path';
 import fs from 'fs';
-import makeNode from './makeNode.js';
+import makeTree from './makeTree.js';
 import parse from './parse.js';
 import formatData from './formatters/index.js';
 
@@ -11,7 +11,7 @@ export default (file1, file2, format = 'stylish') => {
   const file1Object = parse(getData(file1), getTypeFile(file1));
   const file2Object = parse(getData(file2), getTypeFile(file2));
 
-  const node = makeNode(file1Object, file2Object);
+  const node = makeTree(file1Object, file2Object);
 
   return formatData(node, format);
 };
