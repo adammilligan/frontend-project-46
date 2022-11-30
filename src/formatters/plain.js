@@ -1,14 +1,14 @@
 import _ from 'lodash';
 
-const stringify = (val) => {
-  if (_.isString(val)) {
-    return `'${val}'`;
+const stringify = (value) => {
+  if (_.isString(value)) {
+    return `'${value}'`;
   }
-  if (_.isObject(val)) {
+  if (_.isObject(value)) {
     return '[complex value]';
   }
 
-  return val;
+  return value;
 };
 
 const getPropertyName = (acc, key) => {
@@ -19,21 +19,21 @@ const getPropertyName = (acc, key) => {
 
 const getPlain = (node, acc) => {
   const getResult = (data) => {
-    const result = data.map((el) => {
-      const newAcc = getPropertyName(acc, el.key);
-      switch (el.type) {
+    const result = data.map((element) => {
+      const newAcc = getPropertyName(acc, element.key);
+      switch (element.type) {
         case 'unchanged':
           return '';
         case 'nested':
-          return `${getPlain(el.children, newAcc)}`;
+          return `${getPlain(element.children, newAcc)}`;
         case 'added':
-          return `Property '${newAcc}' was added with value: ${stringify(el.value)}`;
+          return `Property '${newAcc}' was added with value: ${stringify(element.value)}`;
         case 'deleted':
           return `Property '${newAcc}' was removed`;
         case 'changed':
-          return `Property '${newAcc}' was updated. From ${stringify(el.valueBefore)} to ${stringify(el.valueAfter)}`;
+          return `Property '${newAcc}' was updated. From ${stringify(element.valueBefore)} to ${stringify(element.valueAfter)}`;
         default:
-          throw new Error(`Unknown type ${el.type}`);
+          throw new Error(`Unknown type ${element.type}`);
       }
     });
 
