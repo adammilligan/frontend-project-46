@@ -17,7 +17,7 @@ const getPropertyName = (acc, key) => {
   return `${acc}.${key}`;
 };
 
-const getPlain = (node, acc) => {
+const getPlain = (tree, acc) => {
   const getResult = (data) => {
     const result = data.map((element) => {
       const newAcc = getPropertyName(acc, element.key);
@@ -40,9 +40,9 @@ const getPlain = (node, acc) => {
     return result;
   };
 
-  const tree = getResult(node);
+  const plain = getResult(tree);
 
-  return `${_.compact(tree).join('\n')}`;
+  return `${_.compact(plain).join('\n')}`;
 };
 
-export default (node) => getPlain(node, '');
+export default (tree) => getPlain(tree, '');
